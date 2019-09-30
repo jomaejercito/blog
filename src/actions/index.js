@@ -1,5 +1,10 @@
+import jsonPlaceholder from '../apis/jsonPlaceholder'
+
 export const fetchPosts = () => {
+  const promise = jsonPlaceholder.get('/posts');
+
   return {
-    type: 'FETCH_POST'
+    type: 'FETCH_POST',
+    payload: promise
   };
 }
